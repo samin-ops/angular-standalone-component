@@ -1,0 +1,16 @@
+<div class="main-container">
+  <mat-card class="login-card">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Ex. gloireadieusam@gmail.com" required />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Ex.@samm#!@#$" required />
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Sign Up</button>
+    <div class="button-text">
+      I have an Account <a [routerLink]="'../login'">Login</a>
+    </div>
+  </mat-card>
+</div>

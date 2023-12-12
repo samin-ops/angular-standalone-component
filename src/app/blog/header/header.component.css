@@ -1,0 +1,19 @@
+.main-container{
+  background-color: darkcyan;
+
+}
+ul,li{
+  list-style: none;
+  display: flex;
+  padding: 20px 40px ;
+  cursor: pointer;
+  color: white;
+}
+li:hover{
+  background-color: #007070;
+  transition: all 1s;
+
+}
+li:last-child{
+  margin-left: auto;
+}
