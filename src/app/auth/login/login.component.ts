@@ -7,8 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 
 
-
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -18,7 +16,7 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
