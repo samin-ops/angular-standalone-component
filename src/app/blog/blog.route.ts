@@ -1,8 +1,7 @@
-import { Route } from "@angular/router";
-import { AboutComponent } from "./about/about.component";
-import { DocsComponent } from "./docs/docs.component";
-import { HomeComponent } from "./home/home.component";
-
+import { Route } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { DocsComponent } from './docs/docs.component';
+import { HomeComponent } from './home/home.component';
 
 export default [
   // {
@@ -10,7 +9,7 @@ export default [
   //   loadComponent: () => import('./home/home.component')
   //    .then(c => c.HomeComponent),// Pour que le composant enfant home charge par defaut: lazy loading
   // },
-  { path: 'home', component: AboutComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'docs', component: DocsComponent },
   //{path:'', redirectTo:'/home',pathMatch:'full'}

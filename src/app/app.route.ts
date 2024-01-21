@@ -1,15 +1,19 @@
-
 import { Route } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 // Pour que le composant enfant home charge par defaut
 export const APP_ROUTE: Route[] = [
-   {
-    path:'',loadChildren:()=>import('./auth/auth.route')
+  { path: '', loadChildren: () => import('./auth/auth.route') },
+  {
+    path: 'blog',
+    component: BlogComponent,
+    loadChildren: () => import('./blog/blog.route'),
   },
   {
-    path: 'blog', component: BlogComponent,
-    loadChildren: () => import('./blog/blog.route')
+    path: 'dashboard',
+    component: DashboardComponent,
+    loadChildren: () => import('./dashboard/dashboard.route'),
   },
 ];
 
@@ -22,4 +26,3 @@ export const APP_ROUTE: Route[] = [
   }
 ];
 */
-

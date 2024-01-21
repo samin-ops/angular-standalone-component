@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-   import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
-
 
 @Component({
   selector: 'app-login',
@@ -19,8 +18,6 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   ],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
-
-}
+export class LoginComponent {}

@@ -1,10 +1,88 @@
-<div class="main-container">
-  <nav>
-    <ul>
-      <li [routerLink]="'./home'">Home</li>
-      <li [routerLink]="'./docs'">Docs</li>
-      <li [routerLink]="'./about'">About</li>
-      <li [routerLink]="'./auth/login'">Log Out</li>
-    </ul>
-  </nav>
-</div>
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon> menu</mat-icon>
+  </button>
+  <span> Sahel App</span>
+  <span class="example-spacer"></span>
+  <button [matMenuTriggerFor]="lv1master" mat-button>Master</button>
+
+  <mat-menu #lv1master="matMenu">
+    <button [matMenuTriggerFor]="company" mat-menu-item>Company</button>
+    <button [matMenuTriggerFor]="customer" mat-menu-item>Customer</button>
+    <button [matMenuTriggerFor]="product" mat-menu-item>Product</button>
+  </mat-menu>
+
+  <mat-menu #company="matMenu">
+    <button mat-menu-item>Term</button>
+    <button mat-menu-item>Tax</button>
+    <button mat-menu-item>Currency</button>
+  </mat-menu>
+
+  <mat-menu #customer="matMenu">
+    <button mat-menu-item>Customer Type</button>
+    <button mat-menu-item>Tax</button>
+  </mat-menu>
+
+  <mat-menu #product="matMenu">
+    <button mat-menu-item>Category</button>
+    <button mat-menu-item>Tax</button>
+    <button [matMenuTriggerFor]="variant" mat-menu-item>Variant</button>
+  </mat-menu>
+
+  <mat-menu #variant="matMenu">
+    <button mat-menu-item>Prix HTT</button>
+    <button mat-menu-item>Prix TTC</button>
+  </mat-menu>
+  <button mat-raised-button color="warn">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <mat-icon
+    matBadge="14"
+    matBadgeColor="warn"
+    [matBadgeHidden]="hidden"
+    (click)="toggleBadgeVisibility()"
+    matBadgeSize="small"
+    matBadgeOverlap="false"
+    >notifications</mat-icon
+  >
+  <!----------------------------dahshboard------------------------------------------>
+</mat-toolbar>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button [routerLink]="'/blog/home'">
+          <mat-icon>home</mat-icon>Home
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button [routerLink]="'/blog/docs'">
+          <mat-icon>work</mat-icon>Docs
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button><mat-icon>settings</mat-icon>Setings</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button><mat-icon>help</mat-icon>Help</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button><mat-icon>analytics</mat-icon>Analytics</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon>power_settings_new</mat-icon>Quitter
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="text-align: center; min-height: 60000px">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
