@@ -1,6 +1,7 @@
 import { Route } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { DocsComponent } from './docs/docs.component';
+import { FormulaireComponent } from './formulaire/formulaire.component';
 import { HomeComponent } from './home/home.component';
 
 export default [
@@ -12,6 +13,7 @@ export default [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'docs', component: DocsComponent },
+  { path: 'form', component: FormulaireComponent },
   //{path:'', redirectTo:'/home',pathMatch:'full'}
 ] as Route[];
 
